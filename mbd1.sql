@@ -1,0 +1,13 @@
+use sakila;
+select count(actor_id)from actor;
+select count(film_id)from film;
+select first_name, last_name, address, district from customer left join address on customer.customer_id = address.address_id;
+select*from actor order by first_name asc;
+select*from actor order by first_name desc;
+select*from actor, address limit 10;
+select*from actor, address limit 10, 10;
+select first_name, last_name, address, district from customer right join address on customer.customer_id = address.address_id;
+select first_name, last_name, address, district from customer inner join address on customer.customer_id = address.address_id;
+select first_name, last_name, address, district, city from customer left join address on customer.customer_id = address.address_id left join city on address.city_id = city.city_id;
+select first_name, last_name, address, district, city from customer inner join address on customer.customer_id = address.address_id inner join city on address.city_id = city.city_id;
+select first_name, last_name, address, district, city, country from customer left join address on customer.customer_id = address.city_id left join city on address.address_id = city.country_id left join country on city.city_id = country.country_id;
